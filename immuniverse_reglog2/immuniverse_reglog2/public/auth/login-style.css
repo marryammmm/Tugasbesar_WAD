@@ -1,0 +1,226 @@
+/* Gaya Global */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ffffff, #026e2e);
+    font-family: 'Times New Roman', serif; /* Font global Times New Roman */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    display: flex;
+    width: 60%;
+    max-width: 1100px;
+    height: 500px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    align-items: stretch; /* Pastikan align-items untuk semua case */
+}
+
+.form-section {
+    flex: 1;
+    display: flex;
+    align-items: center; /* Pusatkan secara vertikal */
+    justify-content: center; /* Pusatkan secara horizontal */
+    padding: 40px; /* Konsisten antara login dan reset password */
+    background-color: #ffffff;
+}
+
+.form-content {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.form-control {
+    height: 45px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #034424, #06ee66); /* Gradien biru ke hijau */
+    color: white;
+    border: none; /* Hapus border untuk tampilan lebih bersih */
+    border-radius: 8px; /* Tambahkan radius untuk sudut melengkung */
+    transition: all 0.3s ease; /* Transisi untuk efek hover yang lembut */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan untuk efek modern */
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #06ee66, #034424); /* Balik gradien saat hover */
+    color: #ffffff; /* Tetap putih untuk kontras */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan saat hover */
+    transform: scale(1.05); /* Sedikit perbesar tombol saat hover */
+}
+
+
+.custom-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 200px; /* Sesuaikan kebutuhan */
+    font-size: 16px;
+    text-align: center; /* Optional, untuk memastikan tidak ada konflik */
+    margin-bottom: -4px; /* Tambahkan jarak di bawah tombol */
+    margin-top: 15px;
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+}
+
+.info-section {
+    flex: 1;
+    background: linear-gradient(to right, #4caf50, #0b601a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 40px;
+}
+
+.doctor-image {
+    width: 10px;
+    margin-bottom: -35px;
+}
+
+/* Default style for success text links */
+.text-success {
+    color: #56bc70; /* Warna hijau */
+    text-decoration: none;
+}
+
+.text-success:hover {
+    color: #1e7e34; /* Hijau lebih gelap saat hover */
+    text-decoration: underline;
+}
+
+/* Custom style for links */
+.custom-link {
+    color: #ff5733; /* Warna oranye */
+    text-decoration: none;
+}
+
+.custom-link:hover {
+    color: #c70039; /* Warna merah tua saat hover */
+    text-decoration: underline;
+}
+
+
+/* Container untuk logo */
+.doctor-image {
+    opacity: 0; /* Mulai dari transparan */
+    animation: fadeIn 2.5s forwards; /* Durasi 2 detik, dengan arah maju */
+}
+
+/* Keyframes untuk efek fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Transparan penuh */
+        transform: scale(0.8); /* Memulai dengan sedikit lebih kecil */
+    }
+    100% {
+        opacity: 1; /* Jelas sepenuhnya */
+        transform: scale(1); /* Kembali ke ukuran normal */
+    }
+}
+
+/* Efek shimmer dengan fade-in */
+.text-shimmer {
+    position: relative;
+    display: inline-block;
+    color: #09953f; /* Warna gelap untuk teks awal */
+    background: linear-gradient(90deg, rgb(91, 147, 97) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(91, 147, 97) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Membuat isi teks transparan untuk efek shimmer */
+    animation: shimmerToNormal 6s forwards, shimmerMove 5s linear infinite;
+    background-size: 300% 100%; /* Memperluas area gradasi untuk shimmer */
+}
+
+/* Keyframes untuk shimmer bergerak */
+@keyframes shimmerMove {
+    0% {
+        background-position: 200% 0; /* Mulai dari sisi kanan */
+    }
+    100% {
+        background-position: -200% 0; /* Bergerak ke sisi kiri */
+    }
+}
+
+/* Keyframes untuk mengubah teks menjadi normal */
+@keyframes shimmerToNormal {
+    0% {
+        color: #000000; /* Warna teks gelap di awal */
+        -webkit-text-fill-color: transparent; /* Tetap transparan untuk efek shimmer */
+    }
+    100% {
+        color: #ffffff; /* Warna normal (cerah) setelah shimmer selesai */
+        -webkit-text-fill-color: #dadadad5; /* Teks solid */
+    }
+}
+
+/* Popup pesan error */
+#popup-message {
+    position: absolute; /* Relatif terhadap form container */
+    top: 60px; /* Di atas form */
+    left: 50%; /* Pusatkan secara horizontal */
+    transform: translateX(-50%); /* Koreksi posisi agar benar-benar di tengah */
+    background-color: #f8d7da; /* Warna merah muda */
+    color: #721c24; /* Warna teks merah gelap */
+    padding: 15px 30px; /* Spasi lebih besar untuk elemen */
+    border: 1px solid #f5c6cb; /* Border merah muda */
+    border-radius: 8px; /* Sudut melengkung lebih besar */
+    width: auto; /* Lebar otomatis sesuai konten */
+    max-width: 95%; /* Batas lebar maksimal */
+    text-align: left; /* Teks rata kiri */
+    z-index: 1000; /* Di atas elemen lainnya */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Bayangan lebih tegas */
+    font-size: 16px; /* Ukuran font lebih besar */
+    display: flex; /* Untuk tombol close */
+    justify-content: space-between; /* Atur ruang antara pesan dan tombol */
+    align-items: center;
+    line-height: 1.5; /* Jarak antar baris teks */
+}
+
+/* Tombol tutup popup */
+#popup-message .close-btn {
+    background: none;
+    border: none;
+    font-size: 18px; /* Ukuran tombol lebih besar */
+    color: #721c24;
+    cursor: pointer;
+    margin-left: 20px; /* Jarak lebih besar dari teks */
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none; /* Untuk browser berbasis Internet Explorer/Edge lama */
+}
+
+input[type="password"]::-webkit-clear-button,
+input[type="password"]::-webkit-inner-spin-button,
+input[type="password"]::-webkit-password-toggle {
+    display: none; /* Untuk browser berbasis Webkit (Chrome, Safari) */
+}
+
+.position-relative {
+    position: relative;
+}
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+}

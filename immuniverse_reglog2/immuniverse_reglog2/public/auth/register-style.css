@@ -1,0 +1,308 @@
+body {
+    font-family: 'Times New Roman', serif;
+    background: linear-gradient(to right, #ffffff, #026e2e);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tombol Register */
+.btn-primary {
+    background-color: #ffffff;
+    color: #28a745;
+    border: 2px solid #28a745;
+}
+
+.btn-primary:hover {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+/* Kontainer Utama */
+.login-container {
+    display: flex;
+    justify-content: space-between; /* Form dan info berdampingan */
+    align-items: center; /* Vertikal rata tengah */
+    height: 90vh; /* Gunakan 90% dari tinggi viewport */
+    max-width: 900px; /* Lebar maksimal container */
+    margin: 0 auto; /* Tengah secara horizontal */
+    background: linear-gradient(135deg, #5ac55d, #0b601a); /* Warna background */
+    padding: 20px; /* Padding di sekitar */
+    border-radius: 15px; /* Sudut melengkung */
+    overflow: hidden; /* Hindari konten yang melewati container */
+}
+
+/* Form Section */
+.form-section {
+    background-color: #ffffff;
+    padding: 10px 25px; /* Padding lebih kecil */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+    width: 38%; /* Lebar tetap untuk form */
+    min-width: 350px; /* Pastikan minimal lebar untuk form */
+    max-height: 103%; /* Pastikan form tidak melebihi kontainer */
+}
+/* Atur ukuran dan margin judul Registrasi */
+.form-content h3 {
+    font-size: 28px !important;
+    margin-bottom: 11px !important;
+    text-align: center; /* Pastikan teks tetap rata tengah */
+    color: rgb(38, 160, 40); /* Warna teks tetap sesuai */
+    font-weight: normal; /* (Opsional) Tambahkan ketebalan */
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column; /* Atur elemen ke arah vertikal */
+        align-items: center;
+    }
+
+    .form-section {
+        max-width: 90%; /* Sesuaikan lebar pada layar kecil */
+        max-height: calc(100vh - 100px); /* Kurangi margin untuk layar kecil */
+    }
+}
+
+
+/* Style Scrollbar */
+.form-section::-webkit-scrollbar {
+    width: 10px;
+}
+
+.form-section::-webkit-scrollbar-thumb {
+    background: #63b977; /* Warna hijau */
+    border-radius: 5px;
+}
+
+.form-section::-webkit-scrollbar-track {
+    background: #ffffff; /* Warna putih */
+}
+
+.info-section {
+    text-align: center;
+    width: 50%; /* Tetapkan lebar untuk area info */
+    padding: 20px;
+    margin-left: -30px;
+}
+
+.info-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.info-section h5 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.info-section p {
+    color: #ffffff;
+}
+
+.text-shimmer {
+    position: relative;
+    display: inline-block;
+    color: #09953f; /* Warna gelap untuk teks awal */
+    background: linear-gradient(90deg, rgb(91, 147, 97) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(91, 147, 97) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Membuat isi teks transparan untuk efek shimmer */
+    animation: shimmerToNormal 6s forwards, shimmerMove 5s linear infinite;
+    background-size: 300% 100%; /* Memperluas area gradasi untuk shimmer */
+}
+
+/* Keyframes untuk shimmer bergerak */
+@keyframes shimmerMove {
+    0% {
+        background-position: 200% 0; /* Mulai dari sisi kanan */
+    }
+    100% {
+        background-position: -200% 0; /* Bergerak ke sisi kiri */
+    }
+}
+
+/* Keyframes untuk mengubah teks menjadi normal */
+@keyframes shimmerToNormal {
+    0% {
+        color: #000000; /* Warna teks gelap di awal */
+        -webkit-text-fill-color: transparent; /* Tetap transparan untuk efek shimmer */
+    }
+    100% {
+        color: #ffffff; /* Warna normal (cerah) setelah shimmer selesai */
+        -webkit-text-fill-color: #dadadad5; /* Teks solid */
+    }
+}
+
+#popup-message {
+    position: fixed; /* Tetap terlihat di layar meskipun halaman di-scroll */
+    top: 20%; /* Posisikan lebih tinggi di layar */
+    left: 50%; /* Pusatkan secara horizontal */
+    transform: translate(-50%, -50%); /* Koreksi agar benar-benar di tengah */
+    background-color: #f8d7da; /* Warna merah muda */
+    color: #721c24; /* Warna teks merah gelap */
+    padding: 15px 30px; /* Spasi dalam elemen */
+    border: 1px solid #f5c6cb; /* Border merah muda */
+    border-radius: 8px; /* Sudut melengkung */
+    width: auto; /* Lebar otomatis sesuai konten */
+    max-width: 95%; /* Maksimal lebar */
+    text-align: left; /* Teks rata kiri */
+    z-index: 1000; /* Pastikan berada di atas elemen lainnya */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+    font-size: 16px; /* Ukuran font */
+    display: flex; /* Untuk pengaturan tombol close */
+    justify-content: space-between; /* Jarak antara pesan dan tombol */
+    align-items: center;
+    line-height: 1.5; /* Jarak antar baris teks */
+    opacity: 1; /* Pastikan terlihat */
+    transition: opacity 0.5s ease; /* Animasi fade-out */
+}
+
+#popup-message .close-btn {
+    background: none;
+    border: none;
+    font-size: 18px; /* Ukuran tombol lebih besar */
+    color: #721c24;
+    cursor: pointer;
+    margin-left: 20px; /* Jarak antara tombol dan teks */
+}
+
+
+ /* Ikon FAQ */
+.faq-icon {
+    font-size: 18px;
+    color: #28a745;
+    cursor: pointer;
+    margin-left: 5px;
+    position: relative;
+    top: -1px; /* Posisi vertikal */
+    vertical-align: middle;
+}
+
+/* Popup FAQ */
+.faq-popup {
+    display: none;
+    position: fixed;
+    top:71%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 400px;
+    max-width: 90%;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.faq-popup-content {
+    position: relative;
+}
+
+/* Tombol tutup di pojok kanan bawah */
+.close-btn {
+    position: absolute;
+    bottom: -20px; /* Jarak dari bawah */
+    right: -5px; /* Jarak dari kanan */
+    background-color: #28a745; /* Warna hijau */
+    color: white; /* Warna font putih */
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.close-btn:hover {
+    background-color: #218838; /* Hijau lebih gelap saat hover */
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666; /* Warna default */
+}
+
+.toggle-password:hover {
+    color: #28a745; /* Warna hijau saat hover */
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none; /* Untuk browser berbasis Internet Explorer/Edge lama */
+}
+
+input[type="password"]::-webkit-clear-button,
+input[type="password"]::-webkit-inner-spin-button,
+input[type="password"]::-webkit-password-toggle {
+    display: none; /* Untuk browser berbasis Webkit (Chrome, Safari) */
+}
+
+
+.doctor-image {
+    width: 355px; /* Ukuran gambar */
+    height: auto;
+    margin-left: -30px; /* Geser ke kanan */
+    position: relative; /* Bisa diubah ke absolute jika diperlukan */
+    transform: translateX(20px); /* Atau tambahkan transform untuk lebih fleksibel */
+    margin-bottom: -35px;
+    opacity: 0; /* Mulai dari transparan */
+    animation: fadeIn 2.5s forwards; /* Durasi animasi 2.5 detik */
+}
+
+/* Animasi Fade-In */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Transparansi penuh */
+        transform: translateY(-20px); /* Sedikit naik di awal */
+    }
+    100% {
+        opacity: 1; /* Tampilan penuh */
+        transform: translateY(0); /* Kembali ke posisi awal */
+    }
+}
+
+
+
+.text-shimmer {
+    text-align: center;
+    font-size: 15px; /* Ukuran teks global */
+    line-height: 1.8; /* Jarak antar baris */
+    color: #ffffff; /* Warna teks */
+    margin: 0 auto;
+}
+
+.text-shimmer h5 {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.text-shimmer p {
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+
+.info-section h5 {
+    margin-left: -24px !important;
+}
+
+.info-section p {
+    margin-left: -23px !important;
+}
+
+.text-bawah {
+    margin-top: -8px; /* Atur jarak lebih kecil */
+    font-size: 14px; /* (Opsional) Atur ukuran font jika diperlukan */
+    text-align: center; /* (Opsional) Pastikan teks rata tengah */
+}

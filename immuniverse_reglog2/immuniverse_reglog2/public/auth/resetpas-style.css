@@ -1,0 +1,275 @@
+/* Gaya Global */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ffffff, #026e2e);
+    font-family: 'Times New Roman', serif; /* Font global Times New Roman */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Kontainer Utama */
+.login-container {
+    display: flex;
+    width: 60%;
+    max-width: 1100px;
+    height: 500px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    align-items: stretch; /* Pastikan align-items untuk semua case */
+}
+
+/* Form Section */
+.form-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+.form-content {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.form-control {
+    height: 45px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+/* Gaya untuk tombol */
+.btn-primary {
+    background: linear-gradient(135deg, #034424, #06ee66); /* Gradien hijau */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Sudut melengkung */
+    padding: 10px 20px; /* Ruang dalam tombol */
+    font-size: 16px;
+    font-weight: normal;
+    transition: all 0.3s ease; /* Efek transisi hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #06ee66, #034424); /* Balik gradien saat hover */
+    color: #ffffff;
+    transform: scale(1.05); /* Perbesar tombol sedikit saat hover */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan lebih besar */
+}
+
+/* Gaya khusus untuk tombol "Lanjutkan" jika diperlukan */
+.custom-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px; /* Tinggi tombol */
+    width: 190px; /* Lebar tombol */
+    text-align: center;
+    margin: 15px auto; /* Pusatkan tombol */
+}
+
+
+.center-button {
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    margin-bottom: 0px; /* Jarak antara judul dan input */
+}
+
+input {
+    margin-bottom: 20px; /* Jarak antara input dan tombol */
+}
+
+
+/* Info Section */
+.info-section {
+    flex: 1;
+    background: linear-gradient(to right, #4caf50, #0b601a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 40px;
+    overflow: visible; /* Hindari pemotongan gambar */
+}
+
+.doctor-image {
+    width: 390px !important;
+    margin-bottom: -35px;
+    opacity: 0;
+    animation: fadeIn 2.5s forwards;
+}
+
+/* Animasi Fade-In */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Efek Shimmer */
+.text-shimmer {
+    position: relative;
+    display: inline-block;
+    color: #09953f;
+    background: linear-gradient(90deg, rgb(91, 147, 97) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(91, 147, 97) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmerToNormal 6s forwards, shimmerMove 5s linear infinite;
+    background-size: 300% 100%;
+}
+
+@keyframes shimmerMove {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@keyframes shimmerToNormal {
+    0% {
+        color: #000000;
+        -webkit-text-fill-color: transparent;
+    }
+    100% {
+        color: #ffffff;
+        -webkit-text-fill-color: #dadadad5;
+    }
+}
+
+/* Popup Pesan */
+#popup-message {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px 30px;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    width: auto;
+    max-width: 95%;
+    text-align: left;
+    z-index: 1000;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.5;
+}
+
+#popup-message .close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #721c24;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+/* Tombol Back */
+.back-button-container {
+    position: absolute;
+    top: 129px;
+    right:1145px;
+    z-index: 20;
+}
+
+.btn-back {
+    display: inline-block;
+    width: 70px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.back-icon {
+    width: 100%;
+    height: auto;
+}
+
+/* Toggle Password */
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+input[type="password"]::-webkit-clear-button,
+input[type="password"]::-webkit-inner-spin-button,
+input[type="password"]::-webkit-password-toggle {
+    display: none;
+}
+
+/* Link Custom */
+.text-success {
+    color: #56bc70;
+    text-decoration: none;
+}
+
+.text-success:hover {
+    color: #1e7e34;
+    text-decoration: underline;
+}
+
+.custom-link {
+    color: #ff5733;
+    text-decoration: none;
+}
+
+.custom-link:hover {
+    color: #c70039;
+    text-decoration: underline;
+}
+
+.form-title {
+    font-size: 20px; /* Ukuran teks */
+    color: rgb(38, 160, 40); /* Warna teks */
+    text-align: center; /* Pusatkan teks */
+    margin-bottom: 25px; /* Tambahkan jarak di bawah */
+    display: flex; /* Flexbox untuk tata letak ikon dan teks */
+    align-items: center; /* Selaraskan ikon secara vertikal dengan teks */
+    justify-content: center; /* Pusatkan elemen secara horizontal */
+}
+
+.icon-envelope {
+    color: rgb(16, 97, 17); /* Warna ikon */
+    margin-right: 5px; /* Jarak antara ikon dan teks */
+    font-size: 24px; /* Ukuran ikon sama dengan teks */
+}
+
+.icon-lock {
+    color: rgb(24, 130, 26); /* Warna ikon gembok */
+    margin-right: 10px; /* Jarak antara ikon dan teks */
+    font-size: 24px; /* Ukuran ikon sama dengan teks */
+}
