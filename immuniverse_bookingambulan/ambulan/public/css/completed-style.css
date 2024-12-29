@@ -1,0 +1,116 @@
+/* Outer Container (Wadah di luar kotak utama) */
+.outer-container {
+    background-color: #ffffff; /* Warna latar belakang luar */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Main Container (Kotak persegi panjang utama) */
+.main-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    height: 550px;
+}
+
+/* Success Video */
+.success-video video {
+    width: 155px;
+    height: 149px;
+    margin-bottom: 20px;
+    margin:auto;
+    border-radius: 0%; /* Sesuaikan jika ingin lingkaran */
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    display: block;
+    outline: none;
+    object-fit: cover; /* Pastikan video memenuhi area tanpa ruang hitam */
+    justify-content: center;
+    
+}
+
+
+/* Title */
+.title {
+    font-size: 19px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Detail Box Container */
+.detail-box {
+    background-color: #f8f9fa; /* Warna latar belakang abu-abu muda */
+    border: 1px solid #ddd; /* Border abu-abu terang */
+    border-radius: 10px; /* Rounded corner */
+    padding: 20px; /* Ruang dalam */
+    margin-bottom: 20px; /* Jarak bawah */
+    text-align: left; /* Teks rata kiri */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+/* Label (teks di dalam <strong>) */
+.detail-box p strong {
+    color: #333; /* Warna label */
+    font-weight: bold; /* Teks tebal untuk label */
+    display: block; /* Jadikan <strong> sebagai blok terpisah */
+    margin-bottom: 5px; /* Jarak bawah antara label dan teks */
+}
+
+/* Paragraf di Detail Box */
+.detail-box p {
+    font-size: 14px; /* Ukuran font */
+    color: #066031; /* Warna teks default */
+    margin: 10px 0; /* Jarak antar paragraf */
+    line-height: 1.5; /* Spasi antar baris */
+}
+
+
+/* Nilai (data yang ditampilkan setelah label) */
+.detail-box p span {
+    color: rgb(156, 61, 61); /* Warna merah untuk nilai */
+    display: inline-block; /* Memastikan tampilan rapi */
+    margin-top: 5px; /* Jarak sedikit ke atas */
+}
+
+/* Cetak Bukti */
+.cetak-bukti {
+    text-align: right;
+    margin-top: 0px;
+}
+
+.cetak-bukti .btn-link {
+    font-size: 14px;
+    color: #066031;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.cetak-bukti .btn-link:hover {
+    color: #25a965;
+}
+
+/* Back Button */
+.back-button {
+    font-size: 11px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ddd;
+    margin-bottom:-480px;
+    margin-left: -270px;
+}
+
+.back-button:hover {
+    background-color: #f8f9fa;
+    color: #333;
+}

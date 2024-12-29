@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Confirmation Container */
+.confirmation-container {
+    max-width: 420px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 0px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: -35px;
+    margin-top: 95px;
+}
+
+/* Header */
+.header-title {
+    background-color: #568e5a;
+    color: white;
+    padding: 10px;
+    border-radius: 0px 0px 0 0;
+    margin: -20px -20px 20px;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+/* Map Container */
+.map-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0px;
+    margin-bottom: 20px;
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Address Section */
+.address-section {
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+    margin-bottom: 10px;
+    margin-right: 200px;
+    text-align: left;
+    line-height: 1; 
+    white-space: nowrap; /* Cegah pelipatan teks */
+}
+
+/* Divider */
+.divider {
+    border: 0;
+    height: 2px;
+    background: #000000;
+    margin: 20px 0;
+}
+
+/* Confirmation Question */
+.confirmation-question {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center; 
+    gap: 10px; /* Atur jarak antar tombol sesuai keinginan */
+}
+
+.btn {
+    padding: 6px 30px;
+    font-size: 14px;
+    border-radius: 5px;
+    pointer-events: auto;
+    user-select: none; /* Cegah seleksi teks */
+    display: inline-block;
+    line-height: normal;
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    pointer-events: auto; /* Izinkan klik pada elemen popup */
+}
+
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    margin: 100px auto;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    user-select: none;
+    pointer-events: auto;
+}
+
+.popup {
+    pointer-events: none; /* Popup background tidak menangkap klik */
+}
+
+.popup-content {
+    pointer-events: auto; /* Hanya konten popup yang menerima klik */
+}

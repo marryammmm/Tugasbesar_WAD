@@ -1,0 +1,160 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Mengatur ukuran teks khusus untuk .ambulance-heading */
+.ambulance-heading {
+    font-size: 19px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+    margin-left: 2%; 
+}
+.heading-line {
+    border: 0;
+    height: 1.8px;
+    background-color: #000000;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 24%; /* Atur panjang garis */
+    margin-left: 2%; 
+}
+.ambulance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    max-height: 600px;
+    padding: 10px 20px;
+}
+
+
+/* Pickup Address */
+.pickup-address {
+    background-color: #ffffff; /* Warna latar belakang */
+    border-radius: 50px; /* Membuat elemen oval */
+    padding: 0 0px; /* Hapus padding vertikal, hanya horizontal */
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    display: flex; /* Susunan horizontal */
+    justify-content: space-between; /* Jarak antara teks dan ikon */
+    align-items: center; /* Pusatkan konten secara vertikal */
+    margin: 50px auto; /* Margin auto untuk center */
+    width: 80%; /* Lebar fleksibel */
+    max-width: 600px; /* Batas maksimal */
+    height: 40px; /* Tinggi tetap */
+    font-size: 16px; /* Ukuran font */
+    font-weight: normal; /* Tidak terlalu bold */
+    color: #333; /* Warna teks */
+    line-height: 40px; /* Atur tinggi baris agar sesuai dengan height */
+    overflow: visible; /* Pastikan konten tidak tersembunyi */
+    position: relative; /* Agar ikon dapat diatur dengan absolute positioning */
+    border: 1px solid #568e5a; /* Tambahkan border hijau */
+
+}
+
+.pickup-address p {
+    margin: 0; /* Hapus margin default paragraf */
+    white-space: nowrap; /* Tidak melipat teks */
+    overflow: hidden; /* Sembunyikan teks meluap */
+    white-space: normal; /* Biarkan teks melipat jika terlalu panjang */
+    flex-grow: 1; /* Buat teks mengambil ruang di tengah */
+    text-align: center; /* Pusatkan teks */
+}
+
+.pickup-address i {
+    font-size: 5px; /* Sesuaikan ukuran ikon */
+    color: #568e5a; /* Warna ikon hijau */
+    margin-left: 0px; /* Beri jarak ikon dari teks */
+    flex-shrink: 0; /* Pastikan ikon tidak mengecil */
+}
+
+
+/* Ikon Lokasi */
+.pickup-address i.bi-geo-alt-fill {
+    color: #568e5a; /* Warna hijau ikon lokasi */
+    font-size: 20px; /* Ukuran ikon */
+    position: absolute; /* Posisi absolut untuk ikon */
+    right: 20px; /* Jarak dari sisi kanan */
+    top: 50%; /* Posisikan di tengah secara vertikal */
+    transform: translateY(-50%); /* Sesuaikan ke tengah */
+}
+/* Ikon Search */
+.search-icon {
+    position: absolute;
+    right: 20px; /* Jarak dari kanan */
+    top: 50%; /* Posisikan di tengah vertikal */
+    transform: translateY(-50%); /* Tweak untuk tengah */
+    color: #333; /* Warna ikon */
+    font-size: 20px; /* Ukuran ikon */
+    cursor: pointer; /* Tampilkan pointer saat hover */
+}
+
+
+
+/* Ambulance List */
+.ambulance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto; /* Tambahkan fitur scroll */
+    max-height: 600px;
+    padding: 0 20px;
+}
+/* Ambulance Card */
+.ambulance-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    gap: 15px;
+}
+
+.ambulance-img {
+    width: 150px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.ambulance-details {
+    flex-grow: 1;
+}
+
+.ambulance-details h5 {
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+.ambulance-details p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.btn-pilih {
+    background-color: #568e5a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative; /* Relatif terhadap posisi default */
+    left: 910px; /* Geser 20px ke kanan */
+    top: 5px; /* Geser 10px ke bawah */
+    width: 150px; /* Panjang tombol secara spesifik */
+}
+
+.btn-pilih:hover {
+    background-color: #4b7e4d;
+}
