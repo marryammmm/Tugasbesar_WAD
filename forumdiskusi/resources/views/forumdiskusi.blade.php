@@ -40,14 +40,19 @@
                                     <td>{{ $forum->id }}</td>
                                     <td>{{ $forum->judul }}</td>
                                     <td>{{ $forum->deskripsi }}</td>
-                                    <td>{{ $forum->pengguna->username }}</td>
+                                    <td>{{ $forum->pengguna->full_name }}</td>
                                     <td>{{ $forum->created_at }}</td>
                                     <td>{{ $forum->updated_at }}</td>
                                     <td>
                                         <a href="{{ route('forum.show', $forum->id) }}" class="btn btn-success btn-sm mt-2">
                                             <i class="fas fa-arrow-right"></i> Lihat
                                         </a>
-                                        @if (session('user_id') && (session('user_id') == $forum->created_by))
+                                        @if (session('user')->id && (session('user')->id == $forum->created_by))
+                                        <!-- Edit -->
+                                            <a href="{{ route('forum.edit', $forum->id) }}" class="btn btn-warning btn-sm mt-2">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </a>
+                                        <!-- Hapus -->
                                             <form action="{{ route('forum.destroy', $forum->id) }}" method="POST"
                                                 class="d-inline">
                                                 @csrf

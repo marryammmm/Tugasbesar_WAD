@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <h5 class="text-success"><i class="fas fa-comment-alt"></i> {{ $forum->judul }}</h5>
                     <p class="text-muted">{{ Str::limit($forum->deskripsi, 100) }}</p>
-                    <small>Dibuat oleh: <strong>{{ $forum->pengguna->nama }}</strong></small><br>
+                    <small>Dibuat oleh: <strong>{{ $forum->pengguna->full_name }}</strong></small><br>
                     <small>{{ $forum->created_at->format('d M Y Y') }}</small>
                     <a href="{{ route('forum.show', $forum->id) }}" class="btn btn-success btn-sm mt-2"><i class="fas fa-arrow-right"></i> Lihat Detail</a>
                 </div>

@@ -38,12 +38,16 @@ class PostController extends Controller
         $request->validate([
             'content' => 'required|string',
         ]);
-        $userId = session('user_id');
+        $user = session('user');
+
+        if (!$user) {
+            return redirect()->route('auth.login');
+        }
 
         Post::create([
             'content' => $request->content,
             'forum_id' => $forumId,
-            'pengguna_id' => $userId
+            'pengguna_id' => $user->id
         ]);
 
         return redirect()->route('forum.show', $forumId)->with('success', 'Postingan berhasil ditambahkan!');
@@ -62,22 +66,17 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $id)
+    public function edit(Post $post)
     {
-        $post = Post::findOrFail($id);
         return view('post.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, Post $id)
+    public function update(UpdatePostRequest $request, Post $post)
     {
-        $request->validate([
-            'content' => 'required|string',
-        ]);
-
-        $post = Post::findOrFail($id);
+   
         $post->update([
             'content' => $request->content,
         ]);

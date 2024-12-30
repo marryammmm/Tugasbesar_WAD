@@ -31,8 +31,8 @@ Route::get('/forum', [ForumController::class, 'index'])->name('forum.index');
 Route::get('/forum/create', [ForumController::class, 'create'])->name('forum.create');
 Route::post('/forum', [ForumController::class, 'store'])->name('forum.store');
 Route::get('/forum/{forum}', [ForumController::class, 'show'])->name('forum.show');
-Route::get('/forum/{forum}/edit', [ForumController::class, 'edit'])->name('forum.edit');
-Route::put('/forum/{forum}', [ForumController::class, 'update'])->name('forum.update');
+Route::get('forum/{forum}/edit', [ForumController::class, 'edit'])->name('forum.edit');
+Route::put('forum/{forum}', [ForumController::class, 'update'])->name('forum.update');
 Route::delete('/forum/{forum}', [ForumController::class, 'destroy'])->name('forum.destroy');
 
 Route::get('/post', [PostController::class, 'index'])->name('post.index');
@@ -47,15 +47,4 @@ Route::get('/comment', [CommentController::class, 'index'])->name('comment.index
 Route::get('/comment/create/{postId}', [CommentController::class, 'create'])->name('comment.create');
 Route::post('/comment/{postId}', [CommentController::class, 'store'])->name('comment.store');
 Route::get('/comment/{comment}', [CommentController::class, 'show'])->name('comment.show');
-Route::get('/comment/{comment}/edit', [CommentController::class, 'edit'])->name('comment.edit');
-Route::put('/comment/{comment}', [CommentController::class, 'update'])->name('comment.update');
 Route::delete('/comment/{comment}', [CommentController::class, 'destroy'])->name('comment.destroy');
-
-
-
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
-Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);

@@ -18,7 +18,7 @@ class ForumController extends Controller
     {
         $forums = Forum::with('pengguna')->get();
         $stats = [
-            'pengguna' => Pengguna::count(),
+            'penggunas' => Pengguna::count(),
             'forums' => Forum::count(),
             'posts' => Post::count(),
             'comments' => Comment::count(),
@@ -45,16 +45,20 @@ class ForumController extends Controller
             'deskripsi' => 'required|string',
         ]);
 
-        // Mengakses ID pengguna dari sesi manual
-        $userId = session('user_id');
+        $user = session('user');
+    
+         // Pastikan user ada
+         if (!$user) {
+             return redirect()->route('auth.login');
+         }
 
         // Membuat forum baru
         Forum::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
-            'created_by' => $userId, // Menyimpan ID pengguna yang membuat forum
+            'created_by' => $user->id, // Menggunakan ID dari object user yang disimpan di session
         ]);
-
+    
         return redirect()->route('forum.index')->with('success', 'Forum berhasil dibuat!');
     }
 
@@ -71,23 +75,16 @@ class ForumController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Forum $id)
+    public function edit(Forum $forum)
     {
-        $forum = Forum::findOrFail($id);
         return view('forum.edit', compact('forum'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateForumRequest $request, Forum $id)
+    public function update(UpdateForumRequest $request, Forum $forum)
     {
-        $request->validate([
-            'judul' => 'required|string|max:200',
-            'deskripsi' => 'required|string',
-        ]);
-
-        $forum = Forum::findOrFail($id);
         $forum->update([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,

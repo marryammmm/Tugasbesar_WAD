@@ -25,10 +25,6 @@ class Forum extends Model
         return $this->hasMany(Post::class, 'forum_id');
     }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'pengguna_id');
-    }
     public function pengguna()
     {
         return $this->belongsTo(Pengguna::class, 'created_by');

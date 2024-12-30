@@ -33,13 +33,17 @@ class CommentController extends Controller
         $request->validate([
             'content' => 'required|string',
         ]);
-        $userId = session('user_id');
+        $user = session('user');
+
+        if (!$user) {
+            return redirect()->route('auth.login');
+        }
 
         // Create the comment
         Comment::create([
             'content' => $request->content,
             'post_id' => $postId,
-            'pengguna_id' =>  $userId, // Ensure to use 'auth()->user()->id'
+            'pengguna_id' =>  $user->id, // Ensure to use 'auth()->user()->id'
         ]);
 
         // Redirect to the post page with a success message

@@ -14,7 +14,11 @@
 <body>
     <div class="container">
         <header>
-            <h1><i class="fas fa-comments"></i> Forum Diskusi</h1>
+        <h1>
+            <a href="{{ route('forumdiskusi') }}" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-comments"></i> Forum Diskusi
+            </a>
+        </h1>
             <nav>
                 <ul>
                     <li><a href="{{ route('forum.index') }}"><i class="fas fa-home"></i> Home</a></li>
@@ -31,8 +35,7 @@
                         </form>
                     @else
                         <!-- Jika belum login -->
-                        <li><a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-                        <li><a href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Register</a></li>
+                        <li><a href="{{ route('dashboard') }}"><i class="fas fa-sign-in-alt"></i> Kembali</a></li>
                     @endif
 
                 </ul>
