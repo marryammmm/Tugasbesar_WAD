@@ -46,14 +46,21 @@ class ScheduleController extends Controller
             'end_time' => 'required|date|after:start_time',
             'day_of_week' => 'required|string',
         ]);
+        
+        $payment=Payment::create([
+            'total' => $request->price,
+            'date' => null,
+        ]);
 
         // Menyimpan data jadwal baru ke dalam database
         Schedule::create([
             'doctor_id' => $request->doctor_id,  // Mengambil doctor_id dari form
             'start_time' => $request->start_time,
+            'payment_id' => $payment->id,
             'end_time' => $request->end_time,
             'day_of_week' => $request->day_of_week,
         ]);
+        
 
         // Mengarahkan kembali ke halaman index dengan pesan sukses
         return redirect()->route('Admin.schedule.index')->with('success', 'Jadwal praktek berhasil ditambahkan');

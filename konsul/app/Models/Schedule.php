@@ -23,4 +23,10 @@ class Schedule extends Model
     {
         return $this->belongsTo(Doctor::class);
     }
+    // Relasi ke model payment
+    public function payment()
+    {
+        return $this->belongsTo(Payment::class);
+    }
+
 }

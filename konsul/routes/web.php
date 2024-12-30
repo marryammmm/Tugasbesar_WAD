@@ -71,14 +71,17 @@ Route::resource('admin/schedules', ScheduleController::class);
     
 
  });
+ use App\Http\Controllers\PaymentController;
+  
+ Route::get('/payment', [PaymentController::class, 'index']);
 
  Route::get('/user/schedules', [ScheduleController::class, 'user_index'])->name('user.schedules.index');
  Route::get('/user/schedules/{id}', [ScheduleController::class, 'show'])->name('user.schedules.show');
-
+ Route::get('/user/payments', [PaymentController::class, 'user_index'])->name('user.payments.index');
+ Route::get('/user/payments/{id}', [PaymentController::class, 'show'])->name('user.payments.show');
+ 
  Route::get('/user/schedule/index', [ScheduleController::class, 'index'])->name('schedule.index');
-
-
-
+ 
 
 
 
